@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Eshop.Category.Create</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Eshop.Category.Create Demo</h1>
+		<form id='create' action=''></form>
+		<div id='categories'></div>
+		
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+
+		<script type='text/javascript'>
+			steal('eshop/category/create','eshop/fixtures',function(){
+				
+				$('#create').eshop_category_create();
+
+				Eshop.Models.Category.bind('created', function(ev, category) {
+					$('<div>').html("<h3>"+category.name+"</h3><p>"+category.description+"</p>")
+					        .appendTo( $('#categories') )
+				})
+				
+			})
+		</script>
+	</body>
+</html>

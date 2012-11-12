@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Eshop.Category.List Demo</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>Eshop.Category.List Demo</h1>
+		<ul id='categories'></ul>
+		<a href='javascript://' id='create'>Create Category</a>
+		<script type='text/javascript'
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal('eshop/category/list','eshop/fixtures',function(){
+				
+				$('#categories').eshop_category_list();
+				
+				$('#create').click(function(){
+					
+					new Eshop.Models.Category({
+						name: "Grilled Cheese",
+						description: "Bread and Cheese"
+					}).save();
+				})
+			})
+		</script>
+	</body>
+</html>
