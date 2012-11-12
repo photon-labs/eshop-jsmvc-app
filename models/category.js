@@ -9,19 +9,20 @@ steal('jquery/model', function(){
 $.Model('Eshop.Models.Category',
 /* @Static */
 {
-	findAll: function(params, success, error) {
+	
+	// findAll: function(params, success, error) {
 
-		var url = "http://localhost:2020/eshop/rest/api/categories";
+	// 	var url = "http://localhost:2020/eshop/rest/api/categories";
 
-		return $.ajax({
-				url: url,
-				header:"Access-Control-Allow-Headers: x-requested-with",
-				type: "GET",
-				dataType: "json"
-		}).then(success).fail(error);
-	},
+	// 	return $.ajax({
+	// 			url: url,
+	// 			header:"Access-Control-Allow-Headers: x-requested-with",
+	// 			type: "GET",
+	// 			dataType: "json"
+	// 	}).then(success).fail(error);
+	// },
 
-	// findAll : "/categories", 
+	findAll : "/categories", 
   	findOne : "/categories/{id}", 
   	create : "/categories",
  	update : "/categories/{id}",
